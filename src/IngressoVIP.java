@@ -1,19 +1,19 @@
-public class IngressoVIP extends Ingresso {
+class IngressoVIP extends Ingresso {
 
-    public IngressoVIP(String filme, String tipoIngresso, int horarioSessao) {
+    private static final float VALOR_INTEIRO_VIP = 48;
+    private static final float VALOR_MEIA_VIP = 24;
+
+    public IngressoVIP(Filme filme, String tipoIngresso, String horarioSessao) {
         super(filme, tipoIngresso, horarioSessao);
     }
 
     @Override
-    public float getValor() {
-        if (getTipoIngresso().equals("inteiro")) {
-            return 48;
-        } else {
-            return 24;
-        }
+    public float getValorInteira() {
+        return VALOR_INTEIRO_VIP;
     }
 
-    public void acessoLanchonete() {
-        System.out.println("Lanchonete do cinema liberada");
+    @Override
+    public float getValorMeia() {
+        return VALOR_MEIA_VIP;
     }
 }

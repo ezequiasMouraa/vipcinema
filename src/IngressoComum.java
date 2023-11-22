@@ -1,15 +1,19 @@
-public class IngressoComum extends Ingresso {
+class IngressoComum extends Ingresso {
 
-    public IngressoComum(String filme, String tipoIngresso, int horarioSessao) {
+    private static final float VALOR_INTEIRO_COMUM = 24;
+    private static final float VALOR_MEIA_COMUM = 12;
+
+    public IngressoComum(Filme filme, String tipoIngresso, String horarioSessao) {
         super(filme, tipoIngresso, horarioSessao);
     }
 
     @Override
-    public float getValor() {
-        if (getTipoIngresso().equals("inteiro")) {
-            return 24;
-        } else {
-            return 12;
-        }
+    public float getValorInteira() {
+        return VALOR_INTEIRO_COMUM;
+    }
+
+    @Override
+    public float getValorMeia() {
+        return VALOR_MEIA_COMUM;
     }
 }

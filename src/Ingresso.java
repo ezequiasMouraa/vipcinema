@@ -1,20 +1,20 @@
 public abstract class Ingresso {
 
-    private String filme;
-    private String tipoIngresso;
-    private int horarioSessao;
+    protected Filme filme;
+    protected String tipoIngresso;
+    protected String horarioSessao;
 
-    public Ingresso(String filme, String tipoIngresso, int horarioSessao) {
+    public Ingresso(Filme filme, String tipoIngresso, String horarioSessao) {
         this.filme = filme;
         this.tipoIngresso = tipoIngresso;
         this.horarioSessao = horarioSessao;
     }
 
-    public String getFilme() {
+    public Filme getFilme() {
         return filme;
     }
 
-    public void setFilme(String filme) {
+    public void setFilme(Filme filme) {
         this.filme = filme;
     }
 
@@ -26,13 +26,15 @@ public abstract class Ingresso {
         this.tipoIngresso = tipoIngresso;
     }
 
-    public int getHorarioSessao() {
+    public String getHorarioSessao() {
         return horarioSessao;
     }
 
-    public void setHorarioSessao(int horarioSessao) {
+    public void setHorarioSessao(String horarioSessao) {
         this.horarioSessao = horarioSessao;
     }
 
-    public abstract float getValor();
+    public abstract float getValorInteira();
+
+    public abstract float getValorMeia();
 }
